@@ -2,37 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shopee Redirect</title>
   <style>
     body {
       margin: 0;
       height: 100vh;
-      background: #fff8e1;
+      background-color: #fff5e6;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      font-family: Arial, sans-serif;
+      font-family: sans-serif;
+      cursor: pointer;
     }
     h1 {
-      background: #ee4d2d;
-      color: white;
       padding: 20px;
       border-radius: 12px;
-      font-size: 20px;
+      background-color: #ee4d2d;
+      color: white;
+      font-size: 22px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body onclick="go()">
   <h1>Click anywhere to continue to Shopee</h1>
+
   <script>
-    const link = "https://shope.ee/6fU7aT6hZB"; // replace with your link
+    const link = "https://s.shopee.ph/9Uqcn9myht"; // Your working Shopee affiliate link
+
     function go() {
-      const win = window.open(link, "_blank");
+      const popup = window.open(link, "_blank");
+
+      // Fallback if pop-up fails
       setTimeout(() => {
-        if (!win || win.closed || typeof win.closed === "undefined") {
-          window.location = link;
+        if (!popup || popup.closed || typeof popup.closed === "undefined") {
+          window.location.href = link;
         }
       }, 3000);
     }
